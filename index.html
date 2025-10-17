@@ -1,44 +1,149 @@
+<!-- 
+    <!DOCTYPE html> informa ao navegador que este arquivo é um documento HTML5,
+    que é a versão mais recente e padrão da linguagem HTML.
+-->
 <!DOCTYPE html>
+
+<!-- 
+    <html> é o elemento raiz de toda página HTML.
+    O atributo "lang='pt-br'" indica que o conteúdo está em português do Brasil,
+    ajudando na acessibilidade e em traduções automáticas.
+-->
 <html lang="pt-br">
+
 <head>
+    <!-- 
+        A tag <meta charset="UTF-8"> define o conjunto de caracteres do documento.
+        UTF-8 é o padrão mais usado e permite acentuação e caracteres especiais.
+    -->
     <meta charset="UTF-8">
+
+    <!-- 
+        Esta tag <meta> ajusta o layout da página para funcionar bem em celulares,
+        tablets e outros dispositivos (design responsivo).
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+        O <title> define o título da aba do navegador (aparece lá em cima).
+    -->
     <title>Tela de Login</title>
+
+    <!-- 
+        Estas duas linhas importam arquivos CSS externos.
+        - reset.css serve para "zerar" os estilos padrão dos navegadores,
+          garantindo uma base uniforme.
+        - styles.css contém os estilos personalizados da página (cores, fontes, tamanhos etc.).
+    -->
     <link rel="stylesheet" href="./src/assets/css/reset.css">
     <link rel="stylesheet" href="./src/assets/css/styles.css">
 </head>
+
 <body>
+    <!-- 
+        O <main> representa o conteúdo principal da página.
+        Aqui colocamos a área central do login.
+    -->
     <main>
+
+        <!-- 
+            <div class="wrapper"> é uma "div" usada para agrupar e centralizar o conteúdo.
+            Geralmente o CSS define a largura e o alinhamento dessa classe.
+        -->
         <div class="wrapper">
+
+            <!-- 
+                <form> cria um formulário, que é o local onde o usuário pode digitar e enviar dados.
+                Aqui temos o formulário de login.
+            -->
             <form>
+
+                <!-- 
+                    <h1> é o título principal da página. Indica visualmente e semanticamente
+                    que esta é a seção de "Login".
+                -->
                 <h1>Login</h1>
 
+                <!-- 
+                    Cada <div class="input-box"> agrupa um campo de entrada (input),
+                    facilitando o estilo com CSS.
+                -->
                 <div class="input-box">
+                    <!-- 
+                        <input> cria uma caixa de texto para o usuário digitar.
+                        - type="text" indica que o campo aceita texto comum.
+                        - name e id servem para identificar o campo (usados em scripts e no envio de dados).
+                        - placeholder mostra um texto de exemplo dentro da caixa.
+                        - required obriga o usuário a preencher antes de enviar o formulário.
+                    -->
                     <input type="text" name="username" id="username" placeholder="username" required />
                 </div>
 
                 <div class="input-box">
+                    <!-- 
+                        type="password" faz com que os caracteres digitados fiquem escondidos (••••),
+                        ideal para senhas.
+                    -->
                     <input type="password" name="password" id="password" placeholder="password" required />
                 </div>
 
+                <!-- 
+                    Esta seção agrupa a opção de "lembrar o login" e o link para "esqueci a senha".
+                -->
                 <div class="remember-forgot">
+
+                    <!-- 
+                        <label> conecta o texto “Remember me” ao checkbox.
+                        O atributo for="rememberme" faz com que clicar no texto
+                        também marque a caixa.
+                    -->
                     <label for="rememberme">
+                        <!-- 
+                            type="checkbox" cria uma caixa de seleção.
+                            Serve para o usuário indicar se quer que o sistema lembre dele.
+                        -->
                         <input id="rememberme" type="checkbox"> Remember me
                     </label>
 
+                    <!-- 
+                        <a> cria um link. 
+                        Aqui ele leva o usuário (ficticiamente) para uma página de recuperação de senha.
+                        O atributo href="/" indica o destino do link.
+                    -->
                     <a href="/">Forgot password ?</a>
                 </div>
 
+                <!-- 
+                    <button> cria o botão de envio do formulário.
+                    type="submit" envia as informações digitadas.
+                    class="btn" será usada para aplicar estilos (como cor e formato do botão).
+                -->
                 <button type="submit" class="btn">Login</button>
 
+                <!-- 
+                    Esta parte oferece um link para quem ainda não tem conta.
+                -->
                 <div class="register-link">
                     <p>
                         Don't have an account?
                     </p>
+                    <!-- 
+                        Outro link, que poderia levar para a página de cadastro de novos usuários.
+                    -->
                     <a href="/">Register</a>
                 </div>
+
             </form>
         </div>
     </main>
 </body>
 </html>
+
+<!-- 
+    ---- Explicação Geral ----
+    - HTML é a estrutura da página (como o esqueleto de um corpo humano).
+    - CSS é o estilo da página (as “roupas”, cores e posicionamentos).
+    - Formulários (<form>) são usados para coletar informações do usuário (como login e senha).
+    - As tags <input>, <button> e <a> são interativas — o usuário pode digitar, clicar e navegar.
+    - As classes (class="...") permitem que o CSS estilize partes específicas da página.
+-->

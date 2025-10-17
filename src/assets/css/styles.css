@@ -1,126 +1,184 @@
+/* 
+    :root é o nível mais alto do documento.
+    Aqui definimos variáveis CSS (começam com "--") para facilitar a manutenção
+    das cores usadas no projeto.
+*/
 :root {
-    --primary-color: #fff;
-    --secondary-color: #9eb3c2;
-    --text-btn-color: #333;
-    --btn-color-hover: #0278a7;
+    --primary-color: #fff;             /* Branco — cor principal, usada em textos e bordas */
+    --secondary-color: #9eb3c2;        /* Azul acinzentado — usada em efeitos de hover */
+    --text-btn-color: #333;            /* Cor do texto dentro do botão */
+    --btn-color-hover: #0278a7;        /* Cor do botão ao passar o mouse */
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* 
+    O seletor * (asterisco) aplica o estilo a todos os elementos da página.
+    É uma forma de padronizar o comportamento inicial de tudo.
+*/
+* {
+    margin: 0; /* Remove as margens padrão dos elementos */
+    padding: 0; /* Remove os espaçamentos internos padrão */
+    box-sizing: border-box; /* Faz com que padding e bordas sejam incluídos no cálculo de largura/altura */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte usada em toda a página */
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('../img/night.jpeg') no-repeat;
-    background-size: cover;
-    background-position: center;
+/* 
+    Estilização do corpo (body) da página.
+    Aqui definimos o plano de fundo e o alinhamento geral do conteúdo.
+*/
+body {
+    display: flex; /* Ativa o flexbox para alinhar os elementos internos */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Faz o body ocupar toda a altura da tela */
+    background: url('../img/night.jpeg') no-repeat; /* Define uma imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem de fundo */
 }
 
-.wrapper{
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    color: var(--primary-color);
-    border-radius: 10px;
-    padding: 30px 40px;
+/* 
+    .wrapper é o contêiner principal do formulário.
+    Aqui criamos o “card” transparente do login.
+*/
+.wrapper {
+    width: 420px; /* Define a largura fixa do card */
+    background: transparent; /* Fundo transparente para mostrar a imagem atrás */
+    border: 2px solid rgba(255, 255, 255, .2); /* Borda branca semitransparente */
+    backdrop-filter: blur(20px); /* Aplica um desfoque de fundo, criando um efeito de vidro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2); /* Sombra leve ao redor do card */
+    color: var(--primary-color); /* Cor do texto dentro do card */
+    border-radius: 10px; /* Arredonda os cantos */
+    padding: 30px 40px; /* Espaçamento interno (topo/baixo 30px, laterais 40px) */
 
-    h1{
-        font-size: 36px;
-        text-align: center;
+    /* 
+        Estilização do título dentro da .wrapper
+        O CSS moderno permite "aninhamento" (como no SCSS),
+        então este estilo só vale para h1 dentro da .wrapper.
+    */
+    h1 {
+        font-size: 36px; /* Tamanho grande para o título */
+        text-align: center; /* Centraliza o texto */
     }
 
-    .input-box{
-        width: 100%;
-        height: 60px;
-        position: relative;
-        margin-top: 20px;
+    /* 
+        Cada campo de entrada (input-box) do formulário.
+    */
+    .input-box {
+        width: 100%; /* O campo ocupa toda a largura da .wrapper */
+        height: 60px; /* Altura do campo */
+        position: relative; /* Permite posicionar elementos dentro se necessário */
+        margin-top: 20px; /* Espaçamento superior entre os campos */
 
-        input{
+        input {
             width: 100%;
             height: 100%;
-            background: transparent;
-            outline: none;
-            border: 2px solid rgba(255, 255, 255, .2);
-            border-radius: 40px;
-            font-size: 16px;
-            color: var(--primary-color);
-            padding: 20px 40px 20px 20px;
+            background: transparent; /* Fundo transparente para ver o efeito de vidro */
+            outline: none; /* Remove a borda azul padrão quando o campo é selecionado */
+            border: 2px solid rgba(255, 255, 255, .2); /* Borda branca semitransparente */
+            border-radius: 40px; /* Bordas arredondadas */
+            font-size: 16px; /* Tamanho do texto digitado */
+            color: var(--primary-color); /* Texto branco */
+            padding: 20px 40px 20px 20px; /* Espaçamento interno (mais à direita) */
 
-            &::placeholder{
-                color: var(--primary-color);
+            /* 
+                ::placeholder estiliza o texto que aparece antes do usuário digitar.
+            */
+            &::placeholder {
+                color: var(--primary-color); /* Placeholder branco */
             }
         }
     }
 
-    .remember-forgot{
-        display: flex;
-        justify-content: space-between;
-        font-size: 14.5px;
-        margin: 15px 5px 15px;
-        flex-wrap: wrap;
+    /* 
+        Área que contém o “Remember me” e o link “Forgot password?”
+    */
+    .remember-forgot {
+        display: flex; /* Coloca os itens lado a lado */
+        justify-content: space-between; /* Um em cada extremidade */
+        font-size: 14.5px; /* Tamanho menor do texto */
+        margin: 15px 5px 15px; /* Espaçamento ao redor */
+        flex-wrap: wrap; /* Permite quebrar linha se for necessário */
 
-        label input{
-            accent-color: var(--primary-color);
-            margin-right: 3px;
+        /* 
+            Estilo do checkbox dentro do label.
+        */
+        label input {
+            accent-color: var(--primary-color); /* Cor da marca do checkbox */
+            margin-right: 3px; /* Pequeno espaço entre a caixa e o texto */
         }
 
-        a{
-            color: var(--primary-color);
-            text-decoration: none;
+        /* 
+            Estilo do link "Forgot password?"
+        */
+        a {
+            color: var(--primary-color); /* Link branco */
+            text-decoration: none; /* Remove o sublinhado padrão */
 
-            &:hover{
-                text-decoration: underline;
-                color: var(--secondary-color);
+            /* 
+                Quando o mouse passa por cima (hover)
+            */
+            &:hover {
+                text-decoration: underline; /* Adiciona sublinhado */
+                color: var(--secondary-color); /* Muda a cor para azul acinzentado */
             }
         }
     }
 
-    .btn{
+    /* 
+        Estilo do botão de login.
+    */
+    .btn {
         width: 100%;
         height: 45px;
-        background: var(--primary-color);
-        border: none;
-        outline: none;
-        border-radius: 40px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-        cursor: pointer;
-        color: var(--text-btn-color);
-        font-weight: 700;
-        transition: all 0.2s ease-in-out;
+        background: var(--primary-color); /* Fundo branco */
+        border: none; /* Remove a borda padrão */
+        outline: none; /* Remove o contorno de foco */
+        border-radius: 40px; /* Bordas arredondadas */
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1); /* Sombra suave */
+        cursor: pointer; /* Mostra a “mãozinha” ao passar o mouse */
+        color: var(--text-btn-color); /* Texto escuro dentro do botão */
+        font-weight: 700; /* Deixa o texto mais grosso */
+        transition: all 0.2s ease-in-out; /* Cria uma transição suave para efeitos de hover */
 
-        &:hover{
-            background-color: var(--btn-color-hover);
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
+        /* 
+            Efeito ao passar o mouse sobre o botão.
+        */
+        &:hover {
+            background-color: var(--btn-color-hover); /* Muda a cor de fundo para azul */
+            border: 1px solid var(--primary-color); /* Adiciona uma borda branca */
+            color: var(--primary-color); /* Muda o texto para branco */
         }
     }
 
-    .register-link{
-        display: flex;
-        flex-direction: column;
-        font-size: 14.5px;
-        text-align: center;
-        margin: 20px 0 15px;
-        gap: 8px;
+    /* 
+        Área final do formulário, com o link de cadastro.
+    */
+    .register-link {
+        display: flex; /* Usa flexbox */
+        flex-direction: column; /* Coloca os elementos um abaixo do outro */
+        font-size: 14.5px; /* Tamanho do texto */
+        text-align: center; /* Centraliza o conteúdo */
+        margin: 20px 0 15px; /* Espaçamento acima e abaixo */
+        gap: 8px; /* Espaço entre os elementos internos */
 
-        a{
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            
-            &:hover{
-                text-decoration: underline;
-                color: var(--secondary-color);
+        a {
+            color: var(--primary-color); /* Link branco */
+            text-decoration: none; /* Remove o sublinhado */
+            font-weight: 600; /* Deixa o texto um pouco mais forte */
+
+            &:hover {
+                text-decoration: underline; /* Sublinha ao passar o mouse */
+                color: var(--secondary-color); /* Muda a cor para azul acinzentado */
             }
         }
     }
-
 }
+
+/* 
+    - CSS é responsável pela aparência visual da página (cores, tamanhos, espaçamentos, fontes, etc.).
+    - As variáveis CSS (--nome) ajudam a manter consistência nas cores e facilitam mudanças futuras.
+    - O Flexbox é usado para alinhar e centralizar elementos com facilidade.
+    - O backdrop-filter: blur() cria o efeito de vidro fosco, muito usado em interfaces modernas.
+    - O transition dá animações suaves quando o usuário interage (ex: hover no botão).
+    - O aninhamento (como input { &::placeholder { ... } }) indica que esses estilos só se 
+        aplicam dentro daquele bloco — esse tipo de sintaxe é comum em pré-processadores CSS, como Sass/SCSS.
+*/
