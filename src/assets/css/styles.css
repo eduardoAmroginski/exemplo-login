@@ -3,6 +3,21 @@
     --secondary-color: #9eb3c2;
     --text-btn-color: #333;
     --btn-color-hover: #0278a7;
+
+    @media only screen and (max-width: 768px){
+        --primary-color: #ff0000;
+        --secondary-color: #0095ff;
+        --text-btn-color: #8a2b7a;
+        --btn-color-hover: #e7ff0b;
+    }
+
+    @media only screen and (min-width: 2144px){
+        --primary-color: #ff9900;
+        --secondary-color: #00ff08;
+        --text-btn-color: #0011ff;
+        --btn-color-hover: #fc00f8;
+    }
+
 }
 
 *{
@@ -31,6 +46,10 @@ body{
     color: var(--primary-color);
     border-radius: 10px;
     padding: 30px 40px;
+
+    @media only screen and (min-width: 2144px){
+        width: 720px;
+    }
 
     h1{
         font-size: 36px;

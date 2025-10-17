@@ -1,0 +1,11 @@
+@media only screen and (min-width: 2144px){
+    .wrapper{
+        background: #ff00001f;
+    }
+
+    body{
+        background: url('../img/capivaras.avif') no-repeat;
+        background-size: cover;
+    }
+
+}
